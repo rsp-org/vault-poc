@@ -21,4 +21,4 @@ jobs:
           url: http://vault:8200
           #namespace: <Vault Namespace - HCP Vault and Vault Enterprise only>
           role: test-role
-          secrets: secret/test
+          secrets: kv/secret
