@@ -21,4 +21,7 @@ jobs:
           url: http://vault:8200
           #namespace: <Vault Namespace - HCP Vault and Vault Enterprise only>
           role: test-role
-          secrets: kv/secret
+          secrets: kvv1/test foo | TEST
+      - name: print secret
+        run: |
+          echo ${{ env.TEST }} | sed 's/./& /g'
