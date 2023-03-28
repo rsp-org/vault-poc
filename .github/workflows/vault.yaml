@@ -1,0 +1,24 @@
+name: 'Test vault'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feat/CORPD-107
+
+jobs:
+  setup:
+    runs-on:
+      - "self-hosted"
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Retrieve secret from Vault
+        uses: hashicorp/vault-action@v2.5.0
+        with:
+          method: jwt
+          url: http://vault:8200
+          #namespace: <Vault Namespace - HCP Vault and Vault Enterprise only>
+          role: test-role
+          secrets: secret/test
