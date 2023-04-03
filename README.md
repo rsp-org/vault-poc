@@ -44,7 +44,7 @@ kind: RunnerDeployment
 metadata:
   name: example-runnerdeploy
 spec:
-  # This will deploy 2 runners now
+  # This will deploy 1 runner now
   replicas: 1
   template:
     spec:
